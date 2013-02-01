@@ -1,0 +1,10 @@
+<h2>Monthly Special</h2>
+
+<table>
+  <%- @widget.attributes.slice("id", "name", "description").each do |key, value| %>
+    <tr>
+      <th><%= key.titleize %></th>
+      <td><%= value %></td>
+    </tr>
+  <%- end %>
+</table>

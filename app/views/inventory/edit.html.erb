@@ -1,0 +1,25 @@
+<h2>Update the <%= @widget.name %> widget</h2>
+
+<%= form_tag(controller: "inventory", action: "update", id: @widget.id) do %>
+  <p>
+    Name:<br/>
+    <%= text_field :widget, :name %>
+  </p>
+
+  <p>
+    Description:<br/>
+    <%= text_field :widget, :description %>
+  </p>
+
+  <p>
+    Color:<br/>
+    <%= text_field :widget, :color %>
+  </p>
+
+  <p>
+    Size:<br/>
+    <%= text_field :widget, :size %>
+  </p>
+
+  <%= submit_tag "Update" %>
+<%- end %>

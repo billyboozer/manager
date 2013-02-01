@@ -1,0 +1,9 @@
+<h1>The Senior Management Team</h1>
+
+<%= render partial: "person", collection: @managers %>
+
+<%- @managers.each do |manager| %>
+  <%= render partial: "person", object: manager %>
+<%- end %>
+
+<p>That is all of the managers!</p>

@@ -1,0 +1,22 @@
+<h2>List of Widgets</h2>
+
+<table class="table table-striped" border="1">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Size</th>
+    <th>Actions</th>
+  </tr>
+
+  <%- @widgets.each do |widget| %>
+    <tr>
+      <td><%= widget.name %></td>
+      <td><%= widget.description %></td>
+      <td><%= widget.size %></td>
+      <td>
+        <%= link_to "Edit Widget", controller: "inventory", action: "edit", id: widget.id %>
+        <%= link_to "Delete Widget", controller: "inventory", action: "destroy", id: widget.id %>
+      </td>
+    </tr>
+  <%- end %>
+</table>

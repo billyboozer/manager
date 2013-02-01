@@ -1,0 +1,31 @@
+<div class="page-header"><h2>Listing Widgets  <small>Rails is Awesome</small></h2></div>
+
+<table class= "listing table table-striped table-bordered table-hover">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Color</th>
+    <th>Size</th>
+    <th>Box</th>
+    <th colspan="3">Actions</th>
+    <th>Created</th>
+  </tr>
+
+<% @widgets.each do |widget| %>
+  <tr>
+    <td><%= widget.name %></td>
+    <td><%= widget.description %></td>
+    <td><%= widget.color %></td>
+    <td><%= widget.size %></td>
+    <td><%= widget.box ? widget.box.material : "None" %></td> 
+    <td><%= link_to 'Show', widget, class: "btn btn-success btn-small" %></td>
+    <td><%= link_to 'Edit', edit_widget_path(widget), class: "btn btn-warning btn-small" %></td>
+    <td><%= link_to 'Destroy', widget, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-small"%></td>
+    <td style="font-style:italic;font-weight:600;color:#696969"><%= "#{time_ago_in_words(widget.created_at)} ago" %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Widget', new_widget_path, class: "btn btn-large btn-block pull-center" %>
